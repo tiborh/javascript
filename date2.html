@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>題名「だいめい」</title>
+<script language="javascript" type="text/javascript">
+function timestamp()
+{
+    var currDate = new Date();      
+    var fileYear = currDate.getFullYear();
+    var fileMonth = ("0" + (currDate.getMonth() + 1)).slice(-2);
+    var fileDay = ("0" + currDate.getDate()).slice(-2);
+    var fileHour = ("0" + currDate.getHours()).slice(-2);
+    var fileMins = ("0" + currDate.getMinutes()).slice(-2);
+    var fileSecs = ("0" + currDate.getSeconds()).slice(-2);
+    var timeStamp = fileYear + fileMonth + fileDay + "_" + fileHour + fileMins + fileSecs;
+    return timeStamp;
+}
+</script>
+</head>
+<body>
+  <h1>章「しょう」</h1>
+  <p>今日は！</p>
+<script language="javascript" type="text/javascript">
+  document.write("<p>Timestamp: " + timestamp() + "</p>");
+</script>
+</body>
+</html>

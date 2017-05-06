@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <title>Prompt Window</title>
+  <!-- <script type="text/javascript" src="scripts/timestamp.js"></script> -->
+<script type="text/javascript">
+  <!--
+      //-->
+</script>
+<!-- 
+     <noscript>
+       Sorry...JavaScript is needed to go ahead.
+     </noscript>
+  -->
+</head>
+<body>
+  <h1>Prompt Window</h1>
+<script type="text/javascript">
+var person = prompt("Please enter your name", "<your name>");
+if (person == null) //never reached yet
+{
+    document.write("No valid input has been read.");
+}
+else if (person == "")
+{
+    document.write("Empty string has been entered.");
+}
+else
+{
+    document.getElementById("demo").innerHTML =
+    document.write("<p>Hello " + person + "! How are you today?</p>");
+}
+</script>
+</body>
+</html>

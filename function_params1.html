@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <title>Function Parameters</title>
+  <!-- <script type="text/javascript" src="scripts/timestamp.js"></script> -->
+<script type="text/javascript">
+  var fname = prompt("First name", "<first name>");
+  var lname = prompt("Last name", "<last name>");
+  var name = "";
+  function sayName(fname, lname)
+  {
+      name = "Your name: " + lname.toUpperCase() + " " + fname;
+      return name;
+  }
+</script>
+<!-- 
+     <noscript>
+       Sorry...JavaScript is needed to go ahead.
+     </noscript>
+  -->
+</head>
+<body>
+  <h1>Function Parameters</h1>
+<script type="text/javascript">
+  document.write("<p>" + sayName(fname,lname) + "</p>");
+</script>
+</body>
+</html>

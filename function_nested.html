@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <title>Nested Functions</title>
+  <!-- <script type="text/javascript" src="scripts/timestamp.js"></script> -->
+<script type="text/javascript">
+  function hypotenuse(a, b)
+  {
+  function square(x) { return x*x; }
+  return Math.sqrt(square(a) + square(b));
+  }
+</script>
+<!-- 
+     <noscript>
+       Sorry...JavaScript is needed to go ahead.
+     </noscript>
+  -->
+</head>
+<body>
+  <h1>Nested Functions</h1>
+<script type="text/javascript">
+  var a = 1;
+  var b = 2;
+  document.write("<p>a: " + a + "</p>");
+  document.write("<p>b: " + b + "</p>");
+  document.write("<p>hypotenuse: "+hypotenuse(1, 2)+"</p>");
+</script>
+</body>
+</html>

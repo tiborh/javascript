@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>題名「だいめい」</title>
+<script language="javascript" type="text/javascript">
+    var mySqlQuery = new Array(); 
+    var i = 0;
+    var filenameStem = "myQuery";
+    var filenameExt = ".sql";
+    var myQueryFilename = filenameStem + timestamp() + filenameExt;
+    function timestamp()
+    {
+    var currDate = new Date();      
+    var fileYear = currDate.getFullYear();
+    var fileMonth = currDate.getMonth() + 1;
+    var fileDay = currDate.getDate();
+    var fileHour = currDate.getHours();
+    var fileMins = currDate.getMinutes();
+    var fileSecs = currDate.getSeconds();
+    var timeStamp = fileYear.toString() + fileMonth.toString() + fileDay.toString() + "_" +
+                    fileHour.toString() + fileMins.toString() + fileSecs.toString();
+    return timeStamp;
+    }
+    function save()
+    {
+        mySqlQuery[i] = document.getElementById("sqlquery").value;
+        mydoc = document.open();
+        mydoc.write(mySqlQuery);
+        mydoc.execCommand("saveAs",true,myQueryFilename);
+        mydoc.close();
+    }
+    function run()
+    {
+    var txt = document.getElementById('sqlquery');
+    alert(txt.value);
+    }
+</script>
+</head>
+<body>
+  <h1>章「しょう」</h1>
+  <p>今日は！</p>
+<script language="javascript" type="text/javascript">
+document.write("<p>Timestamp: " + timestamp() + "</p>");
+</script>
+</body>
+</html>

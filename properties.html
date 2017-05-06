@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <title>Navigator Object Properties</title>
+  <!-- <script type="text/javascript" src="scripts/timestamp.js"></script> -->
+<!-- 
+     <noscript>
+       Sorry...JavaScript is needed to go ahead.
+     </noscript>
+  -->
+</head>
+<body>
+  <h1>Navigator Object Properties</h1>
+<script type="text/javascript">
+<!--
+var aProperty;
+document.write("<table border='1'>");
+  document.write("<tr>");
+  document.write("<th>Property</th><th>Value</th>");
+  document.write("</tr>");
+for (aProperty in navigator)
+{
+  document.write("<tr>");
+  document.write("<td>" + aProperty + "</td><td>" + navigator[aProperty] + "</td>");
+  document.write("</tr>");
+}
+document.write("</table>");
+//-->
+</script>
+</body>
+</html>
