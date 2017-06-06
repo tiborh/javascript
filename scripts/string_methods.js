@@ -27,4 +27,6 @@ console.log("concat(string pieces) " + s1.concat("one", "two", "three"));
 console.log("charAt(s1.length/2):  " + s1.charAt(s1.length/2));
 console.log("charCodeAt(length/2): " + s1.charCodeAt(s1.length/2));
 console.log("s1 as code:           " + string_to_code(s1));
+var s2 = "優しい（やさしい）";
+console.log(s2 + " as code:        " + string_to_code(s2));
 console.log("\"Apple\".split(\"\"):    " + "Apple".split(""));
