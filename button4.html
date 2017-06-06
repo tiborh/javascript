@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head><title>Button</title></head>
+<body>
+
+<h1>Button</h1>
+<p>Using id's and <tt>document.getElementById()</tt> can help overwrite only a defined location of the page.</p>
+
+<p>The number: <span id="result">0</span></p>
+
+<button onclick="var a = document.getElementById('result').innerHTML; document.getElementById('result').innerHTML = parseInt(a) + 1">Try it</button>
+
+</body>
+</html>

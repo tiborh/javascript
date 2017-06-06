@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript">
+      var d = new Date();
+    </script>
+    <!-- 
+	 <noscript>
+	   Sorry...JavaScript is needed to go ahead.
+	 </noscript>
+	 -->
+  </head>
+<body>
+
+<h1>Date Methods</h1>
+  
+<p>The internal clock in JavaScript starts at midnight January 1, 1970 (zero point).</p>
+<p>The methods of the Date object will be examined here.</p>
+
+<dl>
+  <dt><tt>new Date()</tt> object:</dt>
+  <dd id="dateObj"></dd>
+  <dt><tt>getTime()</tt> (the milliseconds since zero point)</dt>
+  <dd id="getTime"></dd>
+  <dt><tt>getDay()</tt> (0 to 6)</dt>
+  <dd id="getDay"></dd>
+  <dt>Short day from array</dt>
+  <dd id="getDayShort"></dd>
+  <dt>All short days from array</dt>
+  <dd id="allDaysShort"></dd>
+  <dt>Full day from array and string</dt>
+  <dd id="getDayFull"></dd>
+  <dt><tt>getDate()</tt> (1 to 31)</dt>
+  <dd id="getDate"></dd>
+  <dt><tt>getMonth()</tt> (0 to 11)</dt>
+  <dd id="getMonth"></dd>
+  <dt><tt>getFullYear()</tt> (yyyy)</dt>
+  <dd id="getFullYear"></dd>
+  <dt><tt>getHours()</tt> (0 to 23)</dt>
+  <dd id="getHours"></dd>
+  <dt><tt>getMinutes()</tt> (0 to 59)</dt>
+  <dd id="getMinutes"></dd>
+  <dt><tt>getSeconds()</tt> (0 to 59)</dt>
+  <dd id="getSeconds"></dd>
+  <dt><tt>getMilliseconds()</tt> (0 to 999)</dt>
+  <dd id="getMilliseconds"></dd>
+</dl>
+
+<script>
+  var days_short_ja = ["日","月","火","水","木","金","土"];
+  var ja_days_post = "曜日";
+  document.getElementById("dateObj").innerHTML = d;
+  document.getElementById("getTime").innerHTML = d.getTime();
+  document.getElementById("getDate").innerHTML = d.getDate();
+  document.getElementById("getDay").innerHTML = d.getDay();
+  document.getElementById("getDayShort").innerHTML = days_short_ja[d.getDay()];
+  document.getElementById("allDaysShort").innerHTML = days_short_ja;
+  document.getElementById("getDayFull").innerHTML = days_short_ja[d.getDay()] + ja_days_post;
+  document.getElementById("getFullYear").innerHTML = d.getFullYear();
+  document.getElementById("getHours").innerHTML = d.getHours();
+  document.getElementById("getMilliseconds").innerHTML = d.getMilliseconds();
+  document.getElementById("getMinutes").innerHTML = d.getMinutes();
+  document.getElementById("getMonth").innerHTML = d.getMonth();
+  document.getElementById("getSeconds").innerHTML = d.getSeconds();
+</script>
+
+</body>
+</html>
+
+<!--
+    getDate()		Get the day as a number (1-31)
+    getDay()		Get the weekday as a number (0-6)
+    getFullYear()	Get the four digit year (yyyy)
+    getHours()		Get the hour (0-23)
+    getMilliseconds()	Get the milliseconds (0-999)
+    getMinutes()	Get the minutes (0-59)
+    getMonth()		Get the month (0-11)
+    getSeconds()	Get the seconds (0-59)
+    getTime()		Get the time (milliseconds since January 1, 1970)
+-->
