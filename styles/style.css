@@ -1,0 +1,18 @@
+body {
+    background-color: ghostwhite;
+}
+
+h1,h2 {
+    font-family: helvetica,avantgarde,arial;
+    color: navy;
+    text-align: center;
+}
+
+p,td {
+    font-family: times,lucida,bookman,newcenturyschlbk,palatino;
+    font-size: 20px;
+}
+
+p.ex {
+    width: 800px;
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Random</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/random.js"></script>
+  </head>
+  <body>
+    <p id="randInt">_</p>
+    <p>Minimum number: <input type="text" id="minNum" value="1"></p>
+    <p>Maximum number: <input type="text" id="maxNum" value="100"></p>
+    <p><input type="button" onclick="document.getElementById('randInt').innerHTML = '0'" value="Reset" /> <input type="button" onclick="document.getElementById('randInt').innerHTML = getRndInt(document.getElementById('minNum').value,document.getElementById('maxNum').value)" value="Random" /></p>
+  </body>
+</html>

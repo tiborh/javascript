@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Random</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/random2.js"></script>
+  </head>
+  <body>
+    <table>
+      <tr>
+	<td>Minimum number:</td>
+	<td><input type="number" id="minNum" value=1></td>
+      </tr>
+      <tr>
+	<td>Maximum number:</td>
+	<td><input type="number" id="maxNum" value=100></td>
+      </tr>
+      <tr>
+	<td>Number of numbers:</td>
+	<td><input type="number" id="numNums" value=10></td>
+      </tr>
+    </table>
+    <p><input type="button" onclick="document.getElementById('randInt').innerHTML = getRndInt(document.getElementById('minNum').value,document.getElementById('maxNum').value,document.getElementById('numNums').value).join(', ')" value="Random" /></p>
+    <p class="ex" id="randInt"></p>
+  </body>
+</html>
