@@ -2,18 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>Checkbox</title>
     <!--<link rel="stylesheet" href="styles/style.css">-->
-    <!-- <script src="scripts/script.js"></script> -->
+    <script src="scripts/checkbox.js"></script>
   </head>
-  <body>
+  <body onload="is_checked('vehi_out','vehicle')">
     <p>Bike:<input type="checkbox" id="vehicle" value="Bike" onchange="is_checked('vehi_out','vehicle')"></p>
     <p>Checkbox checked? <span id="vehi_out"></span></p>
     <script>
-      var is_checked = function(observer,observed) {
-      document.getElementById(observer).innerHTML = document.getElementById(observed).checked;
-      }
-      is_checked("vehi_out","vehicle");
     </script>
   </body>
 </html>
