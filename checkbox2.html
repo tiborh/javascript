@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Checkbox</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <script src="scripts/checkbox.js"></script>
+  </head>
+  <body onload="is_checked('vehi_out','vehicle')">
+    <p>Bike:<input type="checkbox" id="vehicle" value="Bike" onchange="is_checked('vehi_out','vehicle')"></p>
+    <p>Checkbox checked? <span id="vehi_out"></span></p>
+    <p><input type="button" id="checkBtn" value="Check" onclick="document.getElementById('vehicle').checked = true;is_checked('vehi_out','vehicle');" />
+      <input type="button" id="unCheckBtn" value="Uncheck" onclick="document.getElementById('vehicle').checked = false;is_checked('vehi_out','vehicle');" />
+    </p>
+    </script>
+  </body>
+</html>
