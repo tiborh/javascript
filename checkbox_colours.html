@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <script src="scripts/checkbox_colours_script.js"></script>
+  </head>
+  <body>
+    <p>
+      <form onchange="chkColSel('theButton')">
+	<input type="checkbox" value="red" id="red" /><span style="color:red">Red</span>
+	<input type="checkbox" value="green" id="green" /><span style="color:green">Green</span>
+	<input type="checkbox" value="blue" id="blue" /><span style="color:blue">Blue</span>
+      </form>
+    </p>
+    <p><input type="button" id="theButton" value="A Button" onclick="resetCol('theButton')" /></p>
+  </body>
+</html>
