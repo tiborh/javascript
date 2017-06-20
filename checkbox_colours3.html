@@ -7,15 +7,18 @@
     <script src="scripts/checkbox_colours_script3.js"></script>
   </head>
   <body>
-    <p>
       <form onchange="chkColSel('theButton')">
-	<input type="radio" name="foreback" value="fore" id="fore" />foreground
-	<input type="radio" name="foreback" value="back" id="back" />background<br />
-	<input type="checkbox" value="red" id="red" /><span style="color:red">Red</span>
-	<input type="checkbox" value="green" id="green" /><span style="color:green">Green</span>
-	<input type="checkbox" value="blue" id="blue" /><span style="color:blue">Blue</span>
+	<p>
+	  <input type="radio" name="foreback" value="fore" id="fore" checked />foreground
+	  <input type="radio" name="foreback" value="back" id="back" />background
+	</p><p>
+	  <input type="checkbox" value="red" id="red" /><span style="color:red">Red</span>
+	  <input type="checkbox" value="green" id="green" /><span style="color:green">Green</span>
+	  <input type="checkbox" value="blue" id="blue" /><span style="color:blue">Blue</span>
+	</p><p>
+	  <input type="reset" value="Reset All" id="theButton" onclick="resetCol('theButton')">
+	</p>
       </form>
-    </p>
-    <p><input type="button" id="theButton" value="A Button" onclick="resetCol('theButton')" /></p>
+    <p><input type="button" value="Reset Button Only" onclick="resetCol('theButton')" /></p>
   </body>
 </html>

@@ -11,9 +11,10 @@
       <form onchange="chkColSel('theButton')">
 	<input type="checkbox" value="red" id="red" /><span style="color:red">Red</span>
 	<input type="checkbox" value="green" id="green" /><span style="color:green">Green</span>
-	<input type="checkbox" value="blue" id="blue" /><span style="color:blue">Blue</span>
+	<input type="checkbox" value="blue" id="blue" /><span style="color:blue">Blue</span><br /><br />
+	<input type="reset" value="Reset All" id="theButton" onclick="resetCol('theButton')">
       </form>
     </p>
-    <p><input type="button" id="theButton" value="A Button" onclick="resetCol('theButton')" /></p>
+    <p><input type="button" value="Reset Button Only" onclick="resetCol('theButton')" /></p>
   </body>
 </html>
