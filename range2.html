@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <script src="scripts/range_script2.js"></script>
+  </head>
+  <body>
+    <form onchange="changeCol('redRange','greenRange','blueRange','theTarget')">
+      <p>0<span id="redSpan"><input type="range" id="redRange" min="0" max="255" onchange="changeBarCol('redRange','redSpan',0,'redOut')" /></span>255 <span id="redOut" style="color:red">Red:</span></p>
+      <p>0<span id="greenSpan"><input type="range" id="greenRange" min="0" max="255" onchange="changeBarCol('greenRange','greenSpan',1,'greenOut')" /></span>255 <span id="greenOut" style="color:green">Green:</span></p>
+      <p>0<span id="blueSpan"><input type="range" id="blueRange" min="0" max="255" onchange="changeBarCol('blueRange','blueSpan',2,'blueOut')" /></span>255 <span id="blueOut" style="color:blue">Blue:</span></p>
+    </form>
+    <p id="theTarget"></p>
+  </body>
+</html>
