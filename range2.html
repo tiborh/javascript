@@ -2,16 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>Range</title>
     <!--<link rel="stylesheet" href="styles/style.css">-->
+    <style>
+      .center {
+      margin: auto;
+      width: 50%;
+      }
+    </style>
     <script src="scripts/range_script2.js"></script>
   </head>
-  <body>
-    <form onchange="changeCol('redRange','greenRange','blueRange','theTarget')">
-      <p>0<span id="redSpan"><input type="range" id="redRange" min="0" max="255" onchange="changeBarCol('redRange','redSpan',0,'redOut')" /></span>255 <span id="redOut" style="color:red">Red:</span></p>
-      <p>0<span id="greenSpan"><input type="range" id="greenRange" min="0" max="255" onchange="changeBarCol('greenRange','greenSpan',1,'greenOut')" /></span>255 <span id="greenOut" style="color:green">Green:</span></p>
-      <p>0<span id="blueSpan"><input type="range" id="blueRange" min="0" max="255" onchange="changeBarCol('blueRange','blueSpan',2,'blueOut')" /></span>255 <span id="blueOut" style="color:blue">Blue:</span></p>
+  <body onload="changeCol('redRange','greenRange','blueRange','theTarget'); 
+		changeBarCol('redRange','redSpan',0,'redOut'); 
+		changeBarCol('greenRange','greenSpan',1,'greenOut'); 
+		changeBarCol('blueRange','blueSpan',2,'blueOut')">
+    <form oninput="changeCol('redRange','greenRange','blueRange','theTarget')"  style="text-align:center">
+
+      <p><label for="redRange" style="color:red">Red:</label>
+	<span id="redOut" style="color:red"></span><br />
+	0 <span id="redSpan"><input type="range" id="redRange" min="0" max="255" 
+				    oninput="changeBarCol('redRange','redSpan',0,'redOut')" /></span>
+	255</p>
+
+      <p><label for="greenRange" style="color:green">Green:</label>
+	<span id="greenOut" style="color:green"></span><br />
+	0 <span id="greenSpan"><input type="range" id="greenRange" min="0" max="255" 
+				      oninput="changeBarCol('greenRange','greenSpan',1,'greenOut')" /></span>
+	255</p>
+      
+      <p><label for="blueRange" style="color:blue">Blue:</label> <span id="blueOut" style="color:blue"></span><br />
+	0
+	<span id="blueSpan"><input type="range" id="blueRange" min="0" max="255" 
+				   oninput="changeBarCol('blueRange','blueSpan',2,'blueOut')" /></span>
+	255</p>
     </form>
-    <p id="theTarget"></p>
+
+    <div class="center">
+      <p  id="theTarget" style="padding:20px;text-align:center;font-size:200%"</p>
+    </div>
   </body>
 </html>
