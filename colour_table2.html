@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>colour table</title>
+    <link rel="stylesheet" href="css/colour_table.css">
+    <script src="scripts/colour_table2.js"></script>
+  </head>
+  <body onload="resize()">
+    <div id="outmostBox" class="Aligner">
+      <div class="Aligner-item--top">
+	    <h1>Colour Selector</h1>
+      </div>
+      <div class="Aligner-item">
+    <table>
+      <col width="95px">
+      <col width="95px">
+      <col width="95px">
+      <tr>
+	<td id="black" style="background-color:black;color:aliceblue" onclick="colChanger('black')">black</td>
+	<td id="white" style="background-color:white" onclick="colChanger('white')">white</td>
+	<td id="yellow" style="background-color:yellow" onclick="colChanger('yellow')">yellow</td>
+      </tr>
+      <tr>
+	<td id="red" style="background-color:red;color:white" onclick="colChanger('red')">red</td>
+	<td id="purple" style="background-color:purple;color:white" onclick="colChanger('purple')">purple</td>
+	<td id="blue" style="background-color:blue;color:white" onclick="colChanger('blue')">blue</td>
+      </tr>
+      <tr>
+	<td id="green" style="background-color:green;color:white" onclick="colChanger('green')">green</td>
+	<td id="brown" style="background-color:brown;color:aliceblue"  onclick="colChanger('brown')">brown</td>
+	<td id="peachpuff" style="background-color:peachpuff" onclick="colChanger('peachpuff')">PeachPuff</td>
+      </tr>
+    </table>
+    </div>
+      <div class="Aligner-item--bottom">
+	<p id="timestamp"></p>
+	<script>
+	  document.getElementById("timestamp").innerHTML = new Date().toLocaleString();
+	</script>
+      </div>
+    </div>
+  </body>
+</html>

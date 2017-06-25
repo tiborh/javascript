@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>colour table</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <script src="scripts/colour_table.js"></script>
+    <style>
+      td {
+      text-align: center;
+      font-weight: bold;
+      padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+    <table>
+      <col width="95px">
+      <col width="95px">
+      <col width="95px">
+      <tr>
+	<td id="black" style="background-color:black;color:aliceblue" onclick="colChanger('black','target')">black</td>
+	<td id="white" style="background-color:white" onclick="colChanger('white','target')">white</td>
+	<td id="yellow" style="background-color:yellow" onclick="colChanger('yellow','target')">yellow</td>
+      </tr>
+      <tr>
+	<td id="red" style="background-color:red;color:white" onclick="colChanger('red','target')">red</td>
+	<td id="target" style="background-color:white">?</td>
+	<td id="blue" style="background-color:blue;color:white" onclick="colChanger('blue','target')">blue</td>
+      </tr>
+      <tr>
+	<td id="green" style="background-color:green;color:white" onclick="colChanger('green','target')">green</td>
+	<td id="brown" style="background-color:brown;color:aliceblue"  onclick="colChanger('brown','target')">brown</td>
+	<td id="peachpuff" style="background-color:peachpuff" onclick="colChanger('peachpuff','target')">PeachPuff</td>
+      </tr>
+    </table>
+    </center>
+  </body>
+</html>
