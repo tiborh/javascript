@@ -3,7 +3,7 @@ var backgrColChanger = function(srcID) {
     document.body.style.backgroundColor = srcElem.style.backgroundColor;
 }
 
-var toHex = function(dec) 
+/* var toHex = function(dec) 
 {
     hexChars= "0123456789abcdef";
 
@@ -18,6 +18,12 @@ var toHex = function(dec)
     result += hexChars.charAt(i);
 
     return result;
+} */
+
+var toHex = function(dec, size = 2) {
+    var zeroed = "00" + dec.toString(16);
+
+    return zeroed.substr(zeroed.length-size);
 }
 
 // a better way: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces
@@ -35,12 +41,12 @@ var writeSafeColoursTable = function()
 	tableContent += ("<tr>\n");
 	for(j=0;j<6;j++)
 	{
-	    tableContent += "\t<td bgcolor=\"#" + toHex(r) + toHex(g) + toHex(b) + "\"";
+	    var hexColStr = "#" + toHex(r) + toHex(g) + toHex(b);
+	    tableContent += "\t<td bgcolor=\"" + hexColStr + "\"";
 	    // if (r+g+b<0xff)
 	    // {
 	    // 	tableContent += " style= \"color: white\"";
 	    // }
-	    var hexColStr = "#" + toHex(r) + toHex(g) + toHex(b);
 	    var cellID = "cell" + hexColStr.substr(1,6);
 	    tableContent += " id='" + cellID + "'";
 	    tableContent += " style='color:" + getContrastColour(hexColStr) + "'";

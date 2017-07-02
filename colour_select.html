@@ -4,9 +4,13 @@
     <meta charset="utf-8">
     <title>Colour Select</title>
     <!--<link rel="stylesheet" href="styles/style.css">-->
-    <!-- <script src="scripts/script.js"></script> -->
+    <script src="scripts/getContrastColour.js"></script>
+    <script src="scripts/colour_select.js"></script>
   </head>
   <body>
-    <p><span id="targText">Select a colour:</span> <input type="color" id="colPick" onchange="document.getElementById('targText').style.color = document.getElementById('colPick').value"/></p>
+    <h1 id="ptitle">HTML 5 Colour Input</h1>
+    <center>
+    <p><span id="targTxt">Select a colour:</span> <input type="color" id="colPicker" onchange="picCol('colPicker',['targTxt','ptitle'])" /></p>
+    </center>
   </body>
 </html>

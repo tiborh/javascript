@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <title>colour table</title>
     <link rel="stylesheet" href="css/colour_table.css">
+    <script src="scripts/getContrastColour.js"></script>
     <script src="scripts/colour_table2.js"></script>
   </head>
   <body onload="resize()">
     <div id="outmostBox" class="Aligner">
       <div class="Aligner-item--top">
-	    <h1>Colour Selector</h1>
+	    <h1 id="ptitle">Colour Selector</h1>
       </div>
       <div class="Aligner-item">
     <table>
@@ -17,25 +18,26 @@
       <col width="95px">
       <col width="95px">
       <tr>
-	<td id="black" style="background-color:black;color:aliceblue" onmouseover="colChanger('black')">black</td>
-	<td id="white" style="background-color:white" onmouseover="colChanger('white')">white</td>
-	<td id="yellow" style="background-color:yellow" onmouseover="colChanger('yellow')">yellow</td>
+	<td id="black" style="background-color:black;color:aliceblue" onmouseover="colChanger('black',changers)">black</td>
+	<td id="white" style="background-color:white" onmouseover="colChanger('white',changers)">white</td>
+	<td id="yellow" style="background-color:yellow" onmouseover="colChanger('yellow',changers)">yellow</td>
       </tr>
       <tr>
-	<td id="red" style="background-color:red;color:white" onmouseover="colChanger('red')">red</td>
-	<td id="purple" style="background-color:purple;color:white" onmouseover="colChanger('purple')">purple</td>
-	<td id="blue" style="background-color:blue;color:white" onmouseover="colChanger('blue')">blue</td>
+	<td id="red" style="background-color:red;color:white" onmouseover="colChanger('red',changers)">red</td>
+	<td id="purple" style="background-color:purple;color:white" onmouseover="colChanger('purple',changers)">purple</td>
+	<td id="blue" style="background-color:blue;color:white" onmouseover="colChanger('blue',changers)">blue</td>
       </tr>
       <tr>
-	<td id="green" style="background-color:green;color:white" onmouseover="colChanger('green')">green</td>
-	<td id="brown" style="background-color:brown;color:aliceblue"  onclick="colChanger('brown')">brown</td>
-	<td id="peachpuff" style="background-color:peachpuff" onmouseover="colChanger('peachpuff')">PeachPuff</td>
+	<td id="green" style="background-color:green;color:white" onmouseover="colChanger('green',changers)">green</td>
+	<td id="brown" style="background-color:brown;color:aliceblue"  onclick="colChanger('brown',changers)">brown</td>
+	<td id="peachpuff" style="background-color:peachpuff" onmouseover="colChanger('peachpuff',changers)">PeachPuff</td>
       </tr>
     </table>
     </div>
       <div class="Aligner-item--bottom">
 	<p id="timestamp"></p>
 	<script>
+	  var changers = ["ptitle","timestamp"];
 	  document.getElementById("timestamp").innerHTML = new Date().toLocaleString();
 	</script>
       </div>
