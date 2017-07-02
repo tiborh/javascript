@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Safe Colours</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <style>
+      .centre {
+      margin: auto;
+      width: 80%;
+      }
+      td {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      }
+    </style>
+    <script src="scripts/getContrastColour.js"></script>
+    <script src="scripts/safe_colours2.js"></script>
+  </head>
+  <body>
+    <h1 id="ptitle">Safe Colours</h1>
+
+    <p id="pinstr">Clicking a cell changes the background colour of the page.</p>
+
+    <div id="tblPlc" class="centre">
+    </div>
+    <script>
+      writeSafeColoursTable("tblPlc");
+    </script>
+    <p><br /></p>
+  </body>
+</html>
