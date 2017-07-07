@@ -6,8 +6,9 @@
     <!--<link rel="stylesheet" href="styles/style.css">-->
     <script src="scripts/range_script.js"></script>
   </head>
-  <body>
+  <body onload="changeCol('redRange','theTarget','redSpan')">
     <p>0<span id="redSpan"><input type="range" id="redRange" min="0" max="255" onchange="changeCol('redRange','theTarget','redSpan')" /></span>255</p>
     <p id="theTarget"></p>
+    <button onclick="document.getElementById('redRange').value = 0;changeCol('redRange','theTarget','redSpan')">Zero</button>
   </body>
 </html>
