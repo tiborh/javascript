@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Safe Colours</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <style>
+      .centre,.center {
+      margin: auto;
+      width: 50%;
+      }
+      td {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      }
+    </style>
+    <script src="scripts/getContrastColour.js"></script>
+    <script src="scripts/safe_colours3.js"></script>
+    <script src="scripts/range_script2.js"></script>
+  </head>
+  <body onload="changeCol('redRange','greenRange','blueRange','theTarget'); 
+		changeBarCol('redRange','redSpan',0,'redOut'); 
+		changeBarCol('greenRange','greenSpan',1,'greenOut'); 
+		changeBarCol('blueRange','blueSpan',2,'blueOut')">
+    <h1>Colour Tuning</h1>
+    <form id="colForm", oninput="changeCol('redRange','greenRange','blueRange','theTarget')"  style="text-align:center">
+
+      <p><label for="redRange" style="color:red">Red:</label>
+	<span id="redOut" style="color:red"></span><br />
+	0 <span id="redSpan"><input type="range" id="redRange" min="0" max="255" 
+				    oninput="changeBarCol('redRange','redSpan',0,'redOut')" /></span>
+	255</p>
+
+      <p><label for="greenRange" style="color:green">Green:</label>
+	<span id="greenOut" style="color:green"></span><br />
+	0 <span id="greenSpan"><input type="range" id="greenRange" min="0" max="255" 
+				      oninput="changeBarCol('greenRange','greenSpan',1,'greenOut')" /></span>
+	255</p>
+      
+      <p><label for="blueRange" style="color:blue">Blue:</label> <span id="blueOut" style="color:blue"></span><br />
+	0
+	<span id="blueSpan"><input type="range" id="blueRange" min="0" max="255" 
+				   oninput="changeBarCol('blueRange','blueSpan',2,'blueOut')" /></span>
+	255</p>
+    </form>
+
+    <div class="center">
+      <p  id="theTarget" style="padding:20px;text-align:center;font-size:200%"</p>
+    </div>
+
+    <h1 id="ptitle">Safe Colours</h1>
+
+    <p id="pinstr">Click a cell to fine-tune that colour.</p>
+
+    <div id="tblPlc" class="centre">
+    </div>
+    <script>
+      var targFieldNames = ["redRange","greenRange","blueRange"];
+      writeSafeColoursTable("tblPlc",targFieldNames,"colForm");
+    </script>
+    <p><br /></p>
+  </body>
+</html>
