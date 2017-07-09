@@ -18,12 +18,12 @@
     <script src="scripts/safe_colours3.js"></script>
     <script src="scripts/range_script2.js"></script>
   </head>
-  <body onload="changeCol('redRange','greenRange','blueRange','theTarget'); 
+  <body onload="changeRangeCol('redRange','greenRange','blueRange','theTarget'); 
 		changeBarCol('redRange','redSpan',0,'redOut'); 
 		changeBarCol('greenRange','greenSpan',1,'greenOut'); 
 		changeBarCol('blueRange','blueSpan',2,'blueOut')">
     <h1>Colour Tuning</h1>
-    <form id="colForm", oninput="changeCol('redRange','greenRange','blueRange','theTarget')"  style="text-align:center">
+    <form id="colForm", oninput="changeRangeCol('redRange','greenRange','blueRange','theTarget')"  style="text-align:center">
 
       <p><label for="redRange" style="color:red">Red:</label>
 	<span id="redOut" style="color:red"></span><br />
@@ -45,7 +45,7 @@
     </form>
 
     <div class="center">
-      <p  id="theTarget" style="padding:20px;text-align:center;font-size:200%"</p>
+      <p  id="theTarget" style="padding:20px;text-align:center;font-size:200%"></p>
     </div>
 
     <h1 id="ptitle">Safe Colours</h1>

@@ -1,3 +1,20 @@
+var targetHandler = function(theTargs,theCol,theForm) {
+    // console.log(theTargs);
+    // console.log(theCol);
+    rgbCols = theCol.replace("rgb(","").replace(")","").replace(/ /g,"").split(",");
+    // console.log(rgbCols);
+    if (rgbCols.length > theTargs.length)
+	console.log("Three targets are required.");
+    else {
+	var numElems = rgbCols.length
+	for(var i = 0; i < numElems; ++i) {
+	    document.getElementById(theTargs[i]).value = rgbCols[i];
+	    document.getElementById(theTargs[i]).oninput();
+	}
+    }
+    document.getElementById(theForm).oninput();
+}
+
 var backgrColChanger = function() {
     srcElem = document.getElementById(srcID);
     document.body

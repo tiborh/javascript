@@ -11,7 +11,7 @@ function changeBarCol(theRange,theSpan,theIndex,outPut) {
     document.getElementById(outPut).innerHTML = theColour;
 }
 
-function changeCol(red,green,blue,targ) {
+function changeRangeCol(red,green,blue,targ) {
     var maxColVal = 3 * 255;
     var redComp   = parseInt(document.getElementById(red).value);
     var greenComp = parseInt(document.getElementById(green).value);
