@@ -6,7 +6,7 @@
 //    (so it is rendered), filter numbers and convert each number to an integer.
 // 4. Remove the html element we just created
 // 5. Return the HEX code using zyklus code (see credits for more info)
-function getHexColor(colorStr) {
+function getHexColour(colorStr) {
     var a = document.createElement('div');
     a.style.color = colorStr;
     var colors = window.getComputedStyle( document.body.appendChild(a) ).color.match(/\d+/g).map(function(a){ return parseInt(a,10); });
@@ -15,12 +15,10 @@ function getHexColor(colorStr) {
 }
 
 function getNamedColHash() {
-    if (htmlNamedColours.length != fontCol.length)
-	throw new Error("Colour names and font names mismatched length:" + htmlNamedColours.length + " vs " + fontCol.length);
-    var theLength = fontCol.length;
+    var theLength = htmlNamedColours.length;
     var theOutHash = new Array();
     for (var i = 0; i < theLength; ++i) {
-	theOutHash[htmlNamedColours[i]] = fontCol[i];
+	theOutHash[htmlNamedColours[i]] = getHexColour(htmlNamedColours[i]);
     }
     //console.log(theOutHash);
     //console.log(theOutHash["aliceblue"]);
@@ -37,7 +35,7 @@ function getArrayOfColHashes(colHash) {
 	    if(i < theLength)
 		rowArray[theKeys[i]] = colHash[theKeys[i]];
 	    else
-		rowArray["#0000" + i.toString(16)] = "#ffffff";
+		rowArray["#0000" + i.toString(16)] = "#0000" + i.toString(16);
 	}
 	outArray[z] = rowArray;
     }
@@ -51,29 +49,37 @@ function printColArrHashes(colHash) {
 	    console.log(aKey + " => " + colHash[i][aKey]);
 }
 
-function drawNamedColsTable(theHash,targStr) {
-    //theLength = Object.keys(colHash).length;
+function getRgbStr(hexStr) {
+    var rgbArr = hex2rgb(hexStr);
+    return("rgb(" + rgbArr[0] + "," + rgbArr[1] + "," + rgbArr[2] + ")");
+}
+
+function drawNamedColsTable(colArrHashes,targStr,colourTargIDs,colourFormID) {
+    // theLength = Object.keys(colHash).length;
+    // console.log(targStr);
     var theTarget = document.getElementById(targStr);
-    var i = 0;
+    // console.log(theTarget);
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");
-    for(var aKey in theHash) {
-	    var tblRow = document.createElement("tr");
+    var theArrLength = colArrHashes.length;
+    for (var i = 0; i < theArrLength; ++i) {
+	var tblRow = document.createElement("tr");
+	for(var aKey in colArrHashes[i]) {
 	    var tblCell = document.createElement("td");
 	    var cellTxt = document.createTextNode(aKey);
-	    tblCell.setAttribute("id",aKey);
+	    tblCell.setAttribute("id",colArrHashes[i][aKey]);
 	    tblCell.appendChild(cellTxt);
 	    //console.log(i + ": " + aKey);
 	    tblRow.appendChild(tblCell);
 	    tblCell.style.background = aKey;
-	    tblCell.style.color = theHash[aKey];
-	++i;
-	if ( i % 10 == 0) {
-	    //console.log("");
-	    tblBody.appendChild(tblRow);
-	    var tblRow = document.createElement("tr");
+	    tblCell.style.color = getContrastColour(colArrHashes[i][aKey]);
+	    tblCell.addEventListener("click",function(e) {
+		console.log(e.target.id);
+		targetHandler(colourTargIDs,getRgbStr(e.target.id),colourFormID);
+	    })
 	}
+	tblBody.appendChild(tblRow);
     }
-    for( ; i % 10 != 0; ++i)
-	console.log(i + ": <filler>");
+    tbl.appendChild(tblBody);
+    theTarget.appendChild(tbl);
 }

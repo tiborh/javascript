@@ -11,14 +11,15 @@ function changeBarCol(theRange,theSpan,theIndex,outPut) {
     document.getElementById(outPut).innerHTML = theColour;
 }
 
-function changeRangeCol(red,green,blue,targ) {
+function changeRangeCol(colIDs,targ) {
+    // console.log(colIDs);
     var maxColVal = 3 * 255;
-    var redComp   = parseInt(document.getElementById(red).value);
-    var greenComp = parseInt(document.getElementById(green).value);
-    var blueComp  = parseInt(document.getElementById(blue).value);
+    var redComp   = parseInt(document.getElementById(colIDs[0]).value);
+    var greenComp = parseInt(document.getElementById(colIDs[1]).value);
+    var blueComp  = parseInt(document.getElementById(colIDs[2]).value);
     var colSum = redComp + greenComp + blueComp;
     theCol = "#" + ("0" + redComp.toString(16)).slice(-2) + ("0" + greenComp.toString(16)).slice(-2) + ("0" + blueComp.toString(16)).slice(-2);
-    console.log("the colour: " + theCol);
+    // console.log("the colour: " + theCol);
     document.getElementById(targ).innerHTML = theCol;
     document.getElementById(targ).style.backgroundColor = theCol;
     document.getElementById(targ).style.color = getContrastColour(theCol);

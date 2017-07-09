@@ -16,11 +16,11 @@
     <script src="scripts/random2.js"></script>
     <script>var colRanges = ["redRange","greenRange","bludRange"];</script>
   </head>
-  <body onload="changeRangeCol('redRange','greenRange','blueRange','theTarget'); 
+  <body onload="changeRangeCol(theRangeCols,'theTarget'); 
 		changeBarCol('redRange','redSpan',0,'redOut'); 
 		changeBarCol('greenRange','greenSpan',1,'greenOut'); 
 		changeBarCol('blueRange','blueSpan',2,'blueOut')">
-    <form id="colSelect" oninput="changeRangeCol('redRange','greenRange','blueRange','theTarget')"  style="text-align:center">
+    <form id="colSelect" oninput="changeRangeCol(theRangeCols,'theTarget')"  style="text-align:center">
 
       <p><label for="redRange" style="color:red">Red:</label>
 	<span id="redOut" style="color:red"></span><br />

@@ -10,10 +10,15 @@ function getRgbContrastColour(rgbCol) {
     return(getYiq(rgbcols));
 }
 
-function getContrastColour(hexcolor){
-    var r = parseInt(hexcolor.substr(1,2),16);
-    var g = parseInt(hexcolor.substr(3,2),16);
-    var b = parseInt(hexcolor.substr(5,2),16);
+function hex2rgb(hexCol) {
+    var r = parseInt(hexCol.substr(1,2),16);
+    var g = parseInt(hexCol.substr(3,2),16);
+    var b = parseInt(hexCol.substr(5,2),16);
+    return([r,g,b]);
+}
+
+function getContrastColour(hexcolour){
+    rgb = hex2rgb(hexcolour);
     // console.log("basis for yiq analysis: " + r + "," + g + "," + b);
-    return(getYiq([r,g,b]));
+    return(getYiq([rgb[0],rgb[1],rgb[2]]));
 }

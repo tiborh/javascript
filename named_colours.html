@@ -4,17 +4,65 @@
     <meta charset="utf-8">
     <title>named colours</title>
     <!--<link rel="stylesheet" href="styles/style.css">-->
+    <style>
+      .center {
+      margin: auto;
+      width: 50%;
+      }
+      .centre {
+      margin: auto;
+      width: 80%;
+      }
+    </style>
+    <script src="scripts/range_script2.js"></script>
+    <script src="scripts/getContrastColour.js"></script>
     <script src="scripts/html_named_colours.js"></script>
     <script src="scripts/named_colours.js"></script>
+    <script src="scripts/safe_colours3.js"></script>
   </head>
-  <body onload="">
+  <body onload="changeRangeCol(rangeColIDs,'theTarget'); 
+		changeBarCol('redRange','redSpan',0,'redOut'); 
+		changeBarCol('greenRange','greenSpan',1,'greenOut'); 
+		changeBarCol('blueRange','blueSpan',2,'blueOut')">
+    <h1>Named Colours</h1>
+    <p>Clicking the table cells shows the colour codes.</p>
+    <form id="colForm", oninput="changeRangeCol(rangeColIDs,'theTarget')"  style="text-align:center">
+
+      <p><label for="redRange" style="color:red">Red:</label>
+	<span id="redOut" style="color:red"></span><br />
+	0 <span id="redSpan"><input type="range" id="redRange" min="0" max="255" 
+				    oninput="changeBarCol('redRange','redSpan',0,'redOut')" /></span>
+	255</p>
+
+      <p><label for="greenRange" style="color:green">Green:</label>
+	<span id="greenOut" style="color:green"></span><br />
+	0 <span id="greenSpan"><input type="range" id="greenRange" min="0" max="255" 
+				      oninput="changeBarCol('greenRange','greenSpan',1,'greenOut')" /></span>
+	255</p>
+      
+      <p><label for="blueRange" style="color:blue">Blue:</label> <span id="blueOut" style="color:blue"></span><br />
+	0
+	<span id="blueSpan"><input type="range" id="blueRange" min="0" max="255" 
+				   oninput="changeBarCol('blueRange','blueSpan',2,'blueOut')" /></span>
+	255</p>
+      <script>
+	var rangeColIDs = ["redRange","greenRange","blueRange"];
+      </script>
+    </form>
+
+    <div class="center">
+      <p  id="theTarget" style="padding:20px;text-align:center;font-size:200%"></p>
+    </div>
+
+    <div id="placeNamedColours" class="centre" style="text-align:center">
+    </div>
+
     <script>
       var colHash = getNamedColHash();
       var colArrHashes = getArrayOfColHashes(colHash);
-      printColArrHashes(colArrHashes);
-      // drawNamedColsTable(colHash,"placeNamedColours");
+      // printColArrHashes(colArrHashes);
+      drawNamedColsTable(colArrHashes,"placeNamedColours",rangeColIDs,"colForm");
     </script>
-    <div id="placeNamedColours">
-    </div>
+    <p><br /></p>
   </body>
 </html>

@@ -1,4 +1,5 @@
 var helloFunc = function(theId,lang="en") {
+    console.log("peek-a-boo");
     switch(lang) {
     case "en":
 	document.getElementById(theId).innerHTML = "Hello World!";
