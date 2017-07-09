@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>colour input study</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <!-- <script src="scripts/script.js"></script> -->
+    <style>
+      .center {
+      margin: auto;
+      width: 50%;
+      }
+    </style>
+    <script src="scripts/getContrastColour.js"></script>
+    <script src="scripts/colour_input_study2.js"></script>
+  </head>
+  <body onload="changeCol(rgbCols,'theTarget')">
+    <h1>Colour from RGB Code</h1>
+    <div style="width:350px;margin:auto">
+      <form id="rgbComponents" onchange="changeCol(rgbCols,'theTarget')">
+	<fieldset>
+	  <legend style="float:top">rgb</legend>
+	  <label style="color:red">red:</label>
+	  <input id="redRgb" type="number" min=0 max=255 size="3" value="0" />,
+	  <label style="color:green">green</label>
+	  <input id="greenRgb" type="number" min=0 max=255 size="3" value="0" />,
+	  <label style="color:blue">blue</label>
+	  <input id="blueRgb" type="number" min=0 max=255 size="3" value="0" />
+	</fieldset>
+	<script>var rgbCols = ["redRgb","greenRgb","blueRgb"];</script>
+      </form>
+    </div>
+    <div class="center">
+      <p id="theTarget" style="padding:20px;text-align:center;font-size:200%"></p>
+    </div>
+  </body>
+</html>

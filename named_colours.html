@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>named colours</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <script src="scripts/html_named_colours.js"></script>
+    <script src="scripts/named_colours.js"></script>
+  </head>
+  <body onload="">
+    <script>
+      var colHash = getNamedColHash();
+      var colArrHashes = getArrayOfColHashes(colHash);
+      printColArrHashes(colArrHashes);
+      // drawNamedColsTable(colHash,"placeNamedColours");
+    </script>
+    <div id="placeNamedColours">
+    </div>
+  </body>
+</html>

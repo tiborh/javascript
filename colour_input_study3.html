@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>colour input study</title>
+    <!--<link rel="stylesheet" href="styles/style.css">-->
+    <!-- <script src="scripts/script.js"></script> -->
+    <style>
+      .center {
+      margin: auto;
+      width: 50%;
+      }
+    </style>
+    <script src="scripts/getContrastColour.js"></script>
+    <script src="scripts/colour_input_study3.js"></script>
+    <script src="scripts/random2.js"></script>
+  </head>
+  <body onload="changeCol(rgbCols,hexCols,'theTarget')">
+    <h1>Colour from Code</h1>
+    <div style="width:350px;margin:auto">
+      <form id="rgbComponents" onchange="changeCol(rgbCols,hexCols,'theTarget')">
+	<fieldset>
+	  <legend style="float:top">rgb</legend>
+	  <label style="color:red">red:</label>
+	  <input id="redRgb" type="number" min=0 max=255 size="3" value="0" />,
+	  <label style="color:green">green</label>
+	  <input id="greenRgb" type="number" min=0 max=255 size="3" value="0" />,
+	  <label style="color:blue">blue</label>
+	  <input id="blueRgb" type="number" min=0 max=255 size="3" value="0" />
+	</fieldset>
+	<script>var rgbCols = ["redRgb","greenRgb","blueRgb"];</script>
+      </form>
+    </div>
+    <center>
+    <p><button onclick="setRgb(rgbCols,'rgbComponents')">Random Colour</button></p>
+    </center>
+    <div style="width:300px;margin:auto">
+      <form id="hexComponents" onchange="changeCol(hexCols,rgbCols,'theTarget',16,10)">
+	<fieldset>
+	  <legend style="float:top">hex</legend>
+	  <label style="color:red">red:</label>
+	  <input id="redHex" type="text" size="2" value="0" />,
+	  <label style="color:green">green</label>
+	  <input id="greenHex" type="text" size="2" value="0" />,
+	  <label style="color:blue">blue</label>
+	  <input id="blueHex" type="text" size="2" value="0" />
+	</fieldset>
+	<script>var hexCols = ["redHex","greenHex","blueHex"];</script>
+      </form>
+    </div>
+    <div class="center">
+      <p id="theTarget" style="padding:20px;text-align:center;font-size:200%"></p>
+    </div>
+  </body>
+</html>
