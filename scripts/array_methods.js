@@ -1,4 +1,13 @@
 var days = ["日","月","火","水","木","金","土"];
+var hash_days_en = {
+    "日": "Sun",
+    "月": "Mon",
+    "火": "Tue",
+    "水": "Wed",
+    "木": "Thu",
+    "金": "Fri",
+    "土": "Sat"
+};
 
 console.log(days);
 console.log("toString():                 " + days.toString());
