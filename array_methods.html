@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
   <title>Array Methods</title>
   <script type="text/javascript" src="scripts/array_methods.js"></script>
+  <script type="text/javascript" src="scripts/make_list.js"></script>
 <script type="text/javascript">
   <!--
       //-->
@@ -17,5 +18,13 @@
 <body>
   <h1>Array Methods</h1>
   <p>Array method examples are in the log. (Ctrl+Shift+I in Chromium)</p>
+  <div id="theDays"></div>
+  <button onClick="document.getElementById('theDays').appendChild(make_list(days))">曜日（アペンド）</button>
+  <button onClick="document.getElementById('theDays').innerHTML=make_list(days).outerHTML">曜日（リプレース）</button>
+  <button onClick="console.log(make_list(days).outerHTML)">曜日（ダンプ）</button>
+  <button onClick="days.forEach(function(item) { console.log(' ~ ' + item);})">曜日（ファンクション）一</button>
+  <button onClick="days.forEach(function(item,index,whole_array) { console.log(' ' + index + '. ' + item + '\t(' + whole_array + ')');})">曜日（ファンクション）二</button>
+  <button onClick="Object.keys(hash_days_en).forEach(function(a_key,i){console.log('\t' + i + '. ' + a_key + ':\t' + hash_days_en[a_key]);})">曜日（英）</button>
+  <button onClick="document.getElementById('theDays').innerHTML=make_list(days,'ol').outerHTML">曜日（リプレース）二</button>
 </body>
 </html>
