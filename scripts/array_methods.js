@@ -45,3 +45,7 @@ console.log("Several arrays can be concatenated to the first one.");
 console.log("anonymous array can also be concatenated");
 console.log("'slice()' works the same way as string.slice()");
 console.log("max() and min() are not implemented. Can be done via sort()");
+
+var a = new Array(10);
+a.fill(0);
+console.log("a: " + a);
